@@ -1,11 +1,12 @@
 //TODO make start page
-
-const apiCards = "https://api.pokemontcg.io/v2/cards/data/<id>";
+const apiCards = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=16";
 const apiSets = "https://api.pokemontcg.io/v2/sets";
 const apiKey = "ef72570ff371408f9668e414353b7b2e";
 
 //This function grabs the cards
+
 function getCards() {
+	let cards;
 	return fetch(apiCards, {
 		method: "GET",
 		headers: {
@@ -13,21 +14,18 @@ function getCards() {
 		},
 	})
 		.then((response) => {
-			response.json();
+			return response.json();
 		})
 		.then((pokemon) => {
-			pokemon.card.find("base1-4");
-		})
-		.then((card) => {
-			console.log(card.name); // "Charizard"
-			return card.name;
+			cards = pokemon;
+			console.log(cards);
 		});
 }
 
 //this function grabs the sets
 
-let sets;
 function getSets() {
+	let sets;
 	return fetch(apiSets, {
 		method: "GET",
 		headers: {

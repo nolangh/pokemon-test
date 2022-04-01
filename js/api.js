@@ -2,7 +2,6 @@
 const apiCards = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=16";
 const apiSets = "https://api.pokemontcg.io/v2/sets";
 const apiKey = "ef72570ff371408f9668e414353b7b2e";
-
 //This function grabs the cards
 
 function getCards() {
@@ -24,8 +23,9 @@ function getCards() {
 
 //this function grabs the sets
 
+let cardSets = [];
+
 function getSets() {
-	let sets;
 	return fetch(apiSets, {
 		method: "GET",
 		headers: {
@@ -33,10 +33,10 @@ function getSets() {
 		},
 	})
 		.then((res) => {
-			res.json();
+			return res.json();
 		})
 		.then((setInfo) => {
-			sets = setInfo;
+			cardSets = setInfo;
 			console.log(setInfo);
 		})
 		.then(() => {
@@ -44,35 +44,11 @@ function getSets() {
 		});
 }
 
-function selectSet() {} //TODO finish this function
-
-//ANCHOR Ignore anything below this comment. Using it as reference code
-
-let myCourses = "";
-
-function getAvailableCourses() {
-	fetch("https://golf-courses-api.herokuapp.com/courses")
-		.then((response) => {
-			//passes api into this function
-			return response.json(); //returns the api information to .JSON
-		})
-		.then((info) => {
-			//takes the .JSON and grabs the data from the .JSON
-			myCourses = info; // Assigns the .JSON data to variable myCourses
-			console.log(info);
-		})
-		.then(() => {
-			selectCourse(); // calls the select course function
-		});
-}
-
-function selectCourse() {
-	let courseOptionsHtml = "";
-	myCourses.courses.forEach((course) => {
-		courseOptionsHtml += `<option value="${course.id}">${course.name}</option>`;
-		courseImages += `<h4>${course.name}</h4><img id= 'course-image' src= '${course.image}'>`;
+function selectSet() {
+	let testSelectHTML = "";
+	cardSets.info.forEach((data) => {
+		testSelectHTML += `<option value="${data.id}">${data.name}</option>`;
 	});
-	// document.addEventListener("click", getCourseImage);
-	document.getElementById("course-select").innerHTML = courseOptionsHtml;
-	document.getElementById("course-image").innerHTML = courseImages; //make the image only populate with an onClick("")
+
+	document.querySelector("testSelect").innerHTML = testSelectHtml;
 }

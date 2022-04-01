@@ -44,10 +44,12 @@ function getSets() {
 		});
 }
 
+getSets();
+
 function selectSet() {
 	let testSelectHTML = "";
-	cardSets.info.forEach((data) => {
-		testSelectHTML += `<option value="${data.id}">${data.name}</option>`;
+	cardSets.forEach((x) => {
+		testSelectHTML += `<option value="${x.id}">${x.name}</option>`;
 	});
 
 	document.querySelector("testSelect").innerHTML = testSelectHtml;

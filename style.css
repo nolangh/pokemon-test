@@ -19,3 +19,23 @@ header {
 	height: 5em;
 	background-color: lightblue;
 }
+
+.numOfPlayers {
+	display: flex;
+	background-color: aquamarine;
+	width: 50em;
+	flex-direction: row;
+	align-items: center;
+}
+
+/* ----------------------------- select section ----------------------------- */
+
+.select-cont {
+	background-color: brown;
+	width: 20em;
+	padding: 0;
+}
+
+#selectSet {
+	width: 100%;
+}

@@ -22,7 +22,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	height: 5em;
-	background-color: lightblue;
+	background-color: coral;
 }
 
 .numOfPlayers {
@@ -30,7 +30,7 @@ header {
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	background-color: aquamarine;
+	background-color: coral;
 	width: 50%;
 	margin: 2em 25%;
 }
@@ -49,9 +49,9 @@ header {
 .select-cont {
 	display: flex;
 	justify-content: center;
-	background-color: blueviolet;
-	width: 100%;
-	padding: 0;
+	background-color: coral;
+	width: 50%;
+	margin: 0 25%;
 }
 
 #selectSet {

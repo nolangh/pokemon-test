@@ -1,6 +1,7 @@
 const apiCards = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=32";
 const apiSets = "https://api.pokemontcg.io/v2/sets";
 const apiKey = "ef72570ff371408f9668e414353b7b2e";
+let cardSets = [];
 
 //This function grabs the cards
 function getCards() {
@@ -14,13 +15,12 @@ function getCards() {
 			return response.json();
 		})
 		.then((pokemon) => {
-			const cards = pokemon;
+			let cards = pokemon;
 			console.log(cards);
 		});
 }
 
 //this function grabs the sets
-/*let cardSets = [];
 
 function getSets() {
 	return fetch(apiSets, {
@@ -41,18 +41,18 @@ function getSets() {
 		});
 }
 
-
 function selectSet() {
 	let testSelectHtml = "";
-	cardSets.forEach((x) => {
-		testSelectHTML += `<option value="${x.id}">${x.name}</option>`;
+	cardSets.data.forEach((data) => {
+		console.log(data);
+		testSelectHtml += `<option value="${data.id}">${data.name}</option>`;
 	});
 
-	document.querySelector("testSelect").innerHTML = testSelectHtml;
-} */
+	document.getElementById("selectSet").innerHTML = testSelectHtml;
+}
 
 function render() {
-	//getSets();
+	getSets();
 	getCards();
 }
 

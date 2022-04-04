@@ -27,22 +27,43 @@
 					<!-- ------------------------- checkbox container -------------------------- -->
 					<div class="container-fluid checkbox">
 						<label for="one-player">1</label>
-						<input type="checkbox" id="one-player" aria-label="One player" />
+						<input
+							type="checkbox"
+							class="input-check"
+							id="one-player"
+							aria-label="One player"
+						/>
 						<label for="two-player">2</label>
-						<input type="checkbox" id="two-player" aria-label="Two players" />
+						<input
+							type="checkbox"
+							class="input-check"
+							id="two-player"
+							aria-label="Two players"
+						/>
 						<label for="three-player">3</label>
 						<input
 							type="checkbox"
 							id="three-player"
+							class="input-check"
 							aria-label="Three players"
 						/>
 						<label for="four-player">4</label>
-						<input type="checkbox" id="four-player" aria-label="Four players" />
+						<input
+							type="checkbox"
+							class="input-check"
+							id="four-player"
+							aria-label="Four players"
+						/>
 					</div>
 				</div>
 			</div>
 			<div class="container-fluid select-cont">
-				<select id="selectSet" aria-label="Select Set"></select>
+				<select id="selectSet" aria-label="Select Set">
+					<option value="" disabled selected hidden>Select a Set</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
 			</div>
 		</div>
 		<script src="/js/api.js" async defer></script>

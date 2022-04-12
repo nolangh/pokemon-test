@@ -5,6 +5,10 @@ const apiKey = "ef72570ff371408f9668e414353b7b2e";
 const pokeCards = []; //this is the array that has each pokemon
 let cardSets = [];
 
+/* ------------------ NOTE this will be moved to a new file ----------------- */
+const card = document.querySelector("card");
+const cardImage = document.querySelector("");
+
 //ANCHOR creates pokemon object
 function Pokemon(image, name) {
 	this.pokemonImage = image;
@@ -56,6 +60,12 @@ function selectSet() {
 		testSelectHtml += `<option value="${data.id}">${data.name}</option>`;
 	});
 	document.getElementById("selectSet").innerHTML = testSelectHtml;
+}
+
+/* ----------------------- NOTE Card building function ---------------------- */
+function createCard() {
+	const pokecard = document.createElement("div");
+	pokecard.classList.add(".card");
 }
 
 /* ----------------------- ANCHOR Randomizer function ----------------------- */

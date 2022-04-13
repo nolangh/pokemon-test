@@ -29,7 +29,7 @@ function getCards() {
 		.then((pokemon) => {
 			let cards = pokemon;
 			cards.data.forEach((data) => {
-				let newPokemon = new Pokemon(data.images.large, data.name); // NOTE For smaller images "data.images.small"
+				let newPokemon = new Pokemon(data.images.large, data.name);
 				pokeCards.push(newPokemon);
 			});
 		});
@@ -67,15 +67,6 @@ function createCard() {
 	const pokecard = document.createElement("div");
 	pokecard.classList.add(".card");
 }
-
-/* ----------------------- ANCHOR Randomizer function ----------------------- */
-function random(arr) {
-	const randomIndex = Math.floor(Math.random() * arr.length);
-	const item = arr[randomIndex];
-	return item;
-}
-
-const result = random(pokeCards);
 
 /* ------------------NOTE This is just a render function ----------------- */
 function render() {

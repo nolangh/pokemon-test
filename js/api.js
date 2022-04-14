@@ -2,18 +2,37 @@
 const apiCards = "https://api.pokemontcg.io/v2/cards?page=1&pageSize=32";
 const apiSets = "https://api.pokemontcg.io/v2/sets";
 const apiKey = "ef72570ff371408f9668e414353b7b2e";
+const pos = document.getElementById("selectSet");
 const pokeCards = []; //this is the array that has each pokemon
 let cardSets = [];
 let allPokemon = [];
+let goodLord = [];
+let setName;
 
 /* ------------------ NOTE this will be moved to a new file ----------------- */
 
 const card = document.querySelector("card");
-const cardContainer = document.querySelector(".card-cont");
+const cardContainer = document.querySelector("card-cont");
 const submit = document.querySelector("set-select-button");
 
 /* -----------------------------ANCHOR Event Listners ----------------------------- */
-submit.addEventListener("click", getValue);
+pos.addEventListener("change", () => {
+	setName = pos.options[pos.selectedIndex].value;
+	console.log(setName);
+	return fetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${setName}`, {
+		method: "GET",
+		headers: {
+			"X-api-key": apiKey,
+		},
+	})
+		.then((res) => {
+			return res.json();
+		})
+		.then((filteredSet) => {
+			allPokemon = filteredSet;
+			console.log(allPokemon);
+		});
+});
 
 //ANCHOR creates pokemon object
 function Pokemon(image, name) {
@@ -21,7 +40,7 @@ function Pokemon(image, name) {
 	this.pokemonName = name;
 }
 
-/* ------------------ ANCHOR this function grabs the cards ------------------ */
+/* ------------------ ANCHOR this function grabs the cards from the api ------------------ */
 function getCards() {
 	return fetch(apiCards, {
 		method: "GET",
@@ -35,9 +54,9 @@ function getCards() {
 		.then((pokemon) => {
 			let cards = pokemon;
 			cards.data.forEach((data) => {
+				//pulls the images for the cards
 				let newPokemon = new Pokemon(data.images.large, data.name);
 				pokeCards.push(newPokemon);
-				console.log(pokeCards);
 			});
 		});
 }
@@ -55,7 +74,6 @@ function getSets() {
 		})
 		.then((setInfo) => {
 			cardSets = setInfo;
-			console.log(cardSets);
 		})
 		.then(() => {
 			selectSet();
@@ -74,37 +92,17 @@ function selectSet() {
 
 /* ----------------------- NOTE Card building function ---------------------- */
 
-
-function getValue(){
-	let setName = 
-}
-
-function testSet() {
-	return fetch("https://api.pokemontcg.io/v2/sets/swsh1", {
-		method: "GET",
-		headers: {
-			"X-api-key": apiKey,
-		},
-	})
-		.then((res) => {
-			return res.json();
-		})
-		.then((allofThem) => {
-			testSetArray = allofThem;
-			console.log(testSetArray);
-		});
-}
-
 function createCard() {
 	//Card div
 	const pokeCardDiv = document.createElement("div");
 	pokeCardDiv.classList.add(".card");
 	//card_img
 	const pImage = document.createElement("img");
-	pImage.innerHTML = allpokemon.data.image.large;
-	pokecard.appendChild("pImage");
+	pImage.innerHTML = allpokemon[0].data.image.large;
+	pImage.classList.add("card-img-top");
+	pokeCardDiv.appendChild("pImage");
 
-	cardContainer.appendChild(allCards);
+	cardContainer.appendChild(pokeCardDiv);
 }
 
 /* ------------------NOTE This is just a render function ----------------- */
@@ -112,8 +110,7 @@ function createCard() {
 function render() {
 	getSets();
 	getCards();
-	random();
-	testSet();
+	getSetCards();
 }
 
 render();

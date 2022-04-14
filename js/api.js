@@ -31,6 +31,9 @@ pos.addEventListener("change", () => {
 		.then((filteredSet) => {
 			allPokemon = filteredSet;
 			console.log(allPokemon);
+		})
+		.then(() => {
+			createCard();
 		});
 });
 
@@ -93,14 +96,21 @@ function selectSet() {
 /* ----------------------- NOTE Card building function ---------------------- */
 
 function createCard() {
+	// let img = new Image();
+	// img.src = allPokemon.data.images.large;
 	//Card div
 	const pokeCardDiv = document.createElement("div");
-	pokeCardDiv.classList.add(".card");
+	pokeCardDiv.classList.add("card");
+
+	const testP = document.createElement("p");
+	testP.innerText = "this is so the div is not empty";
+	pokeCardDiv.appendChild(testP);
+
 	//card_img
-	const pImage = document.createElement("img");
-	pImage.innerHTML = allpokemon[0].data.image.large;
-	pImage.classList.add("card-img-top");
-	pokeCardDiv.appendChild("pImage");
+	// const pImage = document.createElement("img");
+	// pImage.appendChild(img);
+	// pImage.classList.add("card-img-top");
+	// pokeCardDiv.appendChild(pImage);
 
 	cardContainer.appendChild(pokeCardDiv);
 }
@@ -110,7 +120,6 @@ function createCard() {
 function render() {
 	getSets();
 	getCards();
-	getSetCards();
 }
 
 render();

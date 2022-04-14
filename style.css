@@ -66,9 +66,13 @@ header {
 	justify-content: center;
 }
 
-.card-cont {
+#card-cont {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 	height: 100%;
-	background: lightslategrey;
+	background: orangered;
 	margin: 0;
 	padding: 0;
 }

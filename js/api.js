@@ -12,7 +12,7 @@ let setName;
 /* ------------------ NOTE this will be moved to a new file ----------------- */
 
 const card = document.querySelector("card");
-const cardContainer = document.querySelector("card-cont");
+const cardContainer = document.getElementById("card-cont");
 const submit = document.querySelector("set-select-button");
 
 /* -----------------------------ANCHOR Event Listners ----------------------------- */
@@ -96,8 +96,8 @@ function selectSet() {
 /* ----------------------- NOTE Card building function ---------------------- */
 
 function createCard() {
-	// let img = new Image();
-	// img.src = allPokemon.data.images.large;
+	let img = new Image();
+	img.src = allPokemon[1].data.images;
 	//Card div
 	const pokeCardDiv = document.createElement("div");
 	pokeCardDiv.classList.add("card");
@@ -106,11 +106,10 @@ function createCard() {
 	testP.innerText = "this is so the div is not empty";
 	pokeCardDiv.appendChild(testP);
 
-	//card_img
-	// const pImage = document.createElement("img");
-	// pImage.appendChild(img);
-	// pImage.classList.add("card-img-top");
-	// pokeCardDiv.appendChild(pImage);
+	const pImage = document.createElement("img");
+	pImage.classList.add("card-img-top");
+	pokeCardDiv.appendChild(pImage);
+	pImage.appendChild(img);
 
 	cardContainer.appendChild(pokeCardDiv);
 }

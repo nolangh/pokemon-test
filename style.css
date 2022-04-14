@@ -83,3 +83,8 @@ header {
 	height: 18rem;
 	background: yellow;
 }
+
+.card-img-top {
+	width: 10rem;
+	height: 10rem;
+}

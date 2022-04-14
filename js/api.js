@@ -7,7 +7,8 @@ let cardSets = [];
 
 /* ------------------ NOTE this will be moved to a new file ----------------- */
 const card = document.querySelector("card");
-const cardImage = document.querySelector("");
+// const cardImage = document.querySelector("");
+const cardContainer = document.querySelector(".card-cont");
 
 //ANCHOR creates pokemon object
 function Pokemon(image, name) {
@@ -48,6 +49,7 @@ function getSets() {
 		})
 		.then((setInfo) => {
 			cardSets = setInfo;
+			console.log(cardSets);
 		})
 		.then(() => {
 			selectSet();
@@ -65,7 +67,11 @@ function selectSet() {
 /* ----------------------- NOTE Card building function ---------------------- */
 function createCard() {
 	const pokecard = document.createElement("div");
-	pokecard.classList.add(".card");
+	pokecard.classList.add("container-fluid .card");
+	const pImage = document.createElement("img");
+	pokecard.appendChild("pimage");
+
+	cardContainer.appendChild(finaleCard);
 }
 
 /* ------------------NOTE This is just a render function ----------------- */

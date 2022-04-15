@@ -20,7 +20,7 @@ p {
 	align-items: center;
 	margin: 0;
 	padding: 0;
-	background-color: pink;
+	background-color: coral;
 	/* background-color: #ff0000; */
 	width: 100%;
 	height: 100vh;
@@ -59,7 +59,7 @@ header {
 /* ------------------------------ Card section ------------------------------ */
 
 .set-cont {
-	background-color: blueviolet;
+	background-color: coral;
 	width: 100%;
 	padding-left: 3em;
 	padding-right: 3em;
@@ -72,7 +72,7 @@ header {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	height: 100%;
-	background: orangered;
+	background: coral;
 	margin: 0;
 	padding: 0;
 }

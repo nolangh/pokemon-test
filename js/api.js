@@ -33,7 +33,7 @@ pos.addEventListener("change", () => {
 			console.log(allPokemon);
 		})
 		.then(() => {
-			createCard();
+			//createCard();
 		});
 });
 
@@ -95,7 +95,7 @@ function selectSet() {
 
 /* ----------------------- NOTE Card building function ---------------------- */
 
-function createCard() {
+/* function createCard() {
 	let img = new Image();
 	img.src = allPokemon[1].data.images;
 	//Card div
@@ -112,7 +112,7 @@ function createCard() {
 	pImage.appendChild(img);
 
 	cardContainer.appendChild(pokeCardDiv);
-}
+} */
 
 /* ------------------NOTE This is just a render function ----------------- */
 

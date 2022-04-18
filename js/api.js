@@ -33,7 +33,9 @@ pos.addEventListener("change", () => {
 			console.log(allPokemon);
 		})
 		.then(() => {
-			//createCard();
+			allPokemon.data.images.forEach(() => {
+				createCard();
+			});
 		});
 });
 
@@ -95,24 +97,26 @@ function selectSet() {
 
 /* ----------------------- NOTE Card building function ---------------------- */
 
-/* function createCard() {
-	let img = new Image();
-	img.src = allPokemon[1].data.images;
+function createCard() {
+	let img = new Image(5000, 500);
+	img.src = allPokemon.data.images;
 	//Card div
 	const pokeCardDiv = document.createElement("div");
 	pokeCardDiv.classList.add("card");
 
 	const testP = document.createElement("p");
-	testP.innerText = "this is so the div is not empty";
 	pokeCardDiv.appendChild(testP);
 
 	const pImage = document.createElement("img");
 	pImage.classList.add("card-img-top");
-	pokeCardDiv.appendChild(pImage);
 	pImage.appendChild(img);
-
+	pokeCardDiv.appendChild(pImage);
 	cardContainer.appendChild(pokeCardDiv);
-} */
+}
+
+function populateImage() {
+	allPokemon.data.forEach((data) => {});
+}
 
 /* ------------------NOTE This is just a render function ----------------- */
 

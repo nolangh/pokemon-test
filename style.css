@@ -79,13 +79,13 @@ header {
 
 /* ---------------------------------- Cards --------------------------------- */
 .card {
-	width: 18rem;
-	height: 20rem;
+	width: 15rem;
+	height: 22rem;
 	margin-bottom: 2em;
 	background: yellow;
 }
 
 .card-img-top {
-	width: 10rem;
-	height: 10rem;
+	width: 15rem;
+	height: 22rem;
 }

@@ -13,7 +13,7 @@ let setName;
 
 const card = document.querySelector("card");
 const cardContainer = document.getElementById("card-cont");
-const submit = document.querySelector("set-select-button");
+//const submit = document.querySelector("set-select-button");
 
 /* -----------------------------ANCHOR Event Listners ----------------------------- */
 pos.addEventListener("click", () => {

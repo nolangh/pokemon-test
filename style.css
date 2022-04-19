@@ -1,3 +1,8 @@
+:root {
+	--blue: #3b4cca;
+	--yellow: #ffde00;
+	--red: #ff0000;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -20,7 +25,7 @@ p {
 	align-items: center;
 	margin: 0;
 	padding: 0;
-	background-color: coral;
+	background-color: var(--blue);
 	/* background-color: #ff0000; */
 	width: 100%;
 	height: 100vh;
@@ -31,7 +36,8 @@ header {
 	justify-content: center;
 	align-items: center;
 	height: 5em;
-	background-color: coral;
+	color: var(--yellow);
+	background-color: var(--blue);
 }
 
 .checkbox {
@@ -45,7 +51,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: lightblue;
+	background-color: var(--blue);
 	width: 100%;
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -59,7 +65,7 @@ header {
 /* ------------------------------ Card section ------------------------------ */
 
 .set-cont {
-	background-color: coral;
+	background-color: var(--blue);
 	width: 100%;
 	padding-left: 3em;
 	padding-right: 3em;
@@ -71,8 +77,7 @@ header {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	/* height: 100%; */
-	background: coral;
+	background: var(--blue);
 	margin: 0;
 	padding: 0;
 }
@@ -82,7 +87,7 @@ header {
 	width: 15rem;
 	height: 22rem;
 	margin-bottom: 2em;
-	background: yellow;
+	background: var(--blue);
 }
 
 .card-img-top {

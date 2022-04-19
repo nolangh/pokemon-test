@@ -16,9 +16,8 @@ const cardContainer = document.getElementById("card-cont");
 const submit = document.querySelector("set-select-button");
 
 /* -----------------------------ANCHOR Event Listners ----------------------------- */
-pos.addEventListener("change", () => {
+pos.addEventListener("click", () => {
 	setName = pos.options[pos.selectedIndex].value;
-	console.log(setName);
 	return fetch(`https://api.pokemontcg.io/v2/cards?q=set.id:${setName}`, {
 		method: "GET",
 		headers: {
@@ -98,17 +97,12 @@ function selectSet() {
 /* ----------------------- NOTE Card building function ---------------------- */
 
 function createCard(data) {
-	//let img = new Image(5000, 5000);
-	//img.src = data.images.large;
-	//img.style.backgroundImage = ;
-	//Card div
 	const pokeCardDiv = document.createElement("div");
 	pokeCardDiv.classList.add("card");
 
 	const pImage = document.createElement("img");
 	pImage.classList.add("card-img-top");
 	pImage.src = data.images.large;
-	//pImage.appendChild(img);
 	pokeCardDiv.appendChild(pImage);
 	cardContainer.appendChild(pokeCardDiv);
 }

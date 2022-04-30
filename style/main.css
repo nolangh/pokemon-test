@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+}
+
+body {
+  text-align: center;
+  background-image: url("../images/background-wood.jpg");
+  background-size: cover;
+  color: #aaa;
+  background-color: #43210d;
+}
+
+#game-board {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+main {
+  margin-bottom: 50px;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.card {
+  width: 125px;
+  height: 175px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  background-color: #eee;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+.card img {
+  width: 80%;
+  height: 80%;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-bottom: -10px;
+  padding: 15px;
+  background-color: #111;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+footer ul {
+  display: flex;
+  justify-content: space-around;
+}/*# sourceMappingURL=main.css.map */

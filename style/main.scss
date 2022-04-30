@@ -1,0 +1,71 @@
+$dark: #111;
+$light: #aaa;
+$background: #43210d;
+
+//removes any superfluous margins
+* {
+	margin: 0;
+}
+body {
+	text-align: center;
+	background-image: url("../images/background-wood.jpg");
+	background-size: cover;
+	color: $light;
+	background-color: $background;
+}
+
+//-----WIP-----
+// Black board where the cards are set up
+#game-board {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	gap: 0;
+	width: 800px;
+	height: 500px;
+	margin: auto;
+}
+main {
+	margin-bottom: 50px;
+	background-color: $dark;
+	overflow: hidden;
+}
+.card {
+	width: 125px;
+	height: 175px;
+	text-align: center;
+	padding: 10px;
+	margin: 0 10px;
+	border-radius: 10px;
+	background-color: #eee;
+	user-select: none;
+	&:hover {
+		cursor: pointer;
+	}
+	h2 {
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: 10px;
+	}
+	img {
+		width: 80%;
+		height: 80%;
+	}
+}
+.hidden {
+	display: none;
+}
+//-----WIP-----
+
+footer {
+	margin-bottom: -10px;
+	padding: 15px;
+	background-color: $dark;
+	position: sticky;
+	top: 0px;
+	ul {
+		display: flex;
+		justify-content: space-around;
+	}
+}

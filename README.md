@@ -1,2 +1,3 @@
-# pokemon-test
-test pokemon app for school
+# pokemon
+
+Had to start a repo since anja deleted the files I made

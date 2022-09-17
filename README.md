@@ -1,5 +1,5 @@
 # View any pokemon set
-## This was a pokemon group project for school. the api section was built exclusivly by me
+## This was a pokemon group project for school. The api section was built exclusivly by me
 
 ### Built with 
     - Javascript
